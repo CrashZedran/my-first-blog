@@ -8,18 +8,14 @@
 	<div>
 		<h1><a href="">Crashzedran's Blog</a></h1>
 	</div>
-
-	<div>
-		<p>Published: 06.03.2016, 1:03</p>
-		<h2><a href="">My first post</a></h2>
-		<p>this is my first blog. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-	</div>
-
-	<div>
-		<p>Published: 06.03.2016, 1:03</p>
-		<h2><a href="">My second post</a></h2>
-		<p>this is my second blog. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-	</div>
+	
+	{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaks }}</p>
+		</div>
+	{% endfor %}
 
 </body>
 </html>
